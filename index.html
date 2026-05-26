@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capriccio Suite · 永眠之地</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0a0c;
+            background: radial-gradient(circle at center, #1a1a1f 0%, #050505 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            position: relative;
+        }
+
+        /* 左上角追忆按钮 - 小版 */
+        .memory-btn {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 100;
+            background: rgba(15, 15, 18, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(150, 130, 100, 0.25);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: "Noto Serif SC", serif;
+        }
+
+        .memory-btn:hover {
+            background: rgba(30, 28, 25, 0.85);
+            border-color: rgba(200, 170, 120, 0.5);
+            transform: scale(1.02);
+        }
+
+        .memory-icon {
+            font-size: 13px;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+        }
+
+        .memory-text-ja {
+            font-size: 11px;
+            color: #c8b88a;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+        }
+
+        .memory-text-zh {
+            font-size: 9px;
+            color: #9a8a6a;
+            margin-left: 3px;
+            font-weight: 300;
+        }
+
+        /* 右上角音乐控件 - 同步缩小 */
+        .music-player {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 100;
+            background: rgba(15, 15, 18, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(150, 130, 100, 0.25);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .music-player:hover {
+            background: rgba(30, 28, 25, 0.85);
+            border-color: rgba(200, 170, 120, 0.5);
+        }
+
+        .music-icon { font-size: 13px; color: #b8a070; }
+        .music-text { font-size: 11px; color: #b8a070; }
+        .music-status { font-size: 9px; color: #6a5a40; margin-left: 4px; }
+
+        /* 墓碑容器 */
+        .grave-container { position: relative; display: flex; justify-content: center; align-items: center; }
+
+        .tombstone {
+            width: 260px;
+            background: linear-gradient(160deg, #5a5248 0%, #3a3228 100%);
+            border-radius: 18px 18px 10px 10px;
+            box-shadow: 0 25px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+            text-align: center;
+            padding: 28px 18px 35px 18px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 1px solid #7a6a58;
+        }
+
+        .tombstone:hover { transform: translateY(-5px); box-shadow: 0 30px 45px rgba(0,0,0,0.7); }
+        .tombstone:active { transform: translateY(2px); }
+
+        .tombstone::before {
+            content: "";
+            position: absolute;
+            top: -16px;
+            left: 15px;
+            right: 15px;
+            height: 32px;
+            background: #5a5248;
+            border-radius: 40px 40px 8px 8px;
+        }
+
+        .tombstone::after {
+            content: "";
+            position: absolute;
+            bottom: -18px;
+            left: 15%;
+            width: 70%;
+            height: 15px;
+            background: rgba(0,0,0,0.4);
+            filter: blur(6px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* 社团名称样式 */
+        .circle-name {
+            font-size: 18px;
+            font-family: "Noto Serif SC", "KaiTi", serif;
+            color: #d4c5a8;
+            letter-spacing: 2px;
+            margin: 10px 0 5px;
+            font-weight: 400;
+        }
+        .circle-name-ja {
+            font-size: 14px;
+            font-family: "Noto Serif SC", "KaiTi", serif;
+            color: #b8a880;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .jp-text { font-size: 32px; font-family: "Noto Serif SC", "KaiTi", serif; color: #e8dcc8; letter-spacing: 4px; margin: 5px 0 5px; }
+        .zh-text { font-size: 14px; font-family: "Noto Serif SC", "Songti SC", serif; color: #c8bc9e; letter-spacing: 2px; margin: 8px 0; }
+        .divider { width: 40px; height: 1px; background: #8a7a62; margin: 16px auto; opacity: 0.6; }
+        .date { font-size: 11px; color: #9a8a6a; margin-top: 12px; }
+        .life-sign { font-size: 18px; color: #a09070; margin: 5px 0; opacity: 0.7; }
+        .click-hint { position: absolute; bottom: 12px; left: 0; right: 0; font-size: 10px; color: #8a7a5a; opacity: 0.5; }
+        .tombstone:hover .click-hint { opacity: 0.8; }
+
+        .moonlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(100,100,120,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .candle-glow {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(255,150,50,0.06) 0%, transparent 70%);
+            pointer-events: none;
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+
+        footer {
+            position: fixed;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 9px;
+            color: #4a4030;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="moonlight"></div>
+    <div class="candle-glow"></div>
+
+    <!-- 左上角 追忆之匣 按钮（小版） -->
+    <div class="memory-btn" id="memoryBtn">
+        <span class="memory-icon">📦</span>
+        <span class="memory-text-ja">追憶の匣</span>
+        <span class="memory-text-zh">追忆之匣</span>
+    </div>
+
+    <!-- 右上角音乐控件 - 默认关闭状态 -->
+    <div class="music-player" id="musicPlayer">
+        <span class="music-icon" id="musicIcon">🎵</span>
+        <span class="music-text">鎮魂曲</span>
+        <span class="music-status" id="musicStatus">静寂</span>
+    </div>
+
+    <div class="grave-container">
+        <div class="tombstone" id="tombstone">
+            <div class="epitaph">
+                <div class="circle-name">Capriccio Suite</div>
+                <div class="circle-name-ja">同人サークル</div>
+                <div class="jp-text">カプリチオ組曲</div>
+                <div class="zh-text">同人社团「随想曲组曲」</div>
+                <div class="divider"></div>
+                <div class="jp-text" style="font-size: 22px;">創作の痕跡</div>
+                <div class="zh-text" style="font-size: 12px;">创作的痕迹</div>
+                <div class="life-sign">✝</div>
+                <div class="date">2004 — 2010</div>
+                <div class="zh-text" style="font-size: 10px;">ここに永眠する</div>
+                <div class="zh-text" style="font-size: 9px; color:#9a8a6a;">长眠于此</div>
+            </div>
+            <div class="click-hint">⚰️ 点击墓碑 开启追忆 ⚰️</div>
+        </div>
+    </div>
+
+    <footer>In Memoriam · 2004-2010</footer>
+
+    <script>
+        const tombstone = document.getElementById('tombstone');
+        const memoryBtn = document.getElementById('memoryBtn');
+
+        // 墓碑点击：跳转到语言选择页（墓碑专用）
+        tombstone.addEventListener('click', () => {
+            localStorage.setItem('entry_type', 'tombstone');
+            document.body.style.transition = 'opacity 0.6s';
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'lang-select.html';
+            }, 600);
+        });
+
+        // 追忆之匣点击：跳转到遗物库语言选择页
+        memoryBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            localStorage.setItem('entry_type', 'archive');
+            document.body.style.transition = 'opacity 0.6s';
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'archive-lang-select.html';
+            }, 600);
+        });
+
+        // ========== 音乐播放器 ==========
+        const musicPlayer = document.getElementById('musicPlayer');
+        const musicStatus = document.getElementById('musicStatus');
+        const musicIcon = document.getElementById('musicIcon');
+        
+        const audio = new Audio('bgm.m4a');
+        audio.loop = true;
+        audio.volume = 0.5;
+        
+        let isPlaying = false;
+        
+        musicPlayer.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!isPlaying) {
+                audio.play();
+                isPlaying = true;
+                musicStatus.innerText = '鎮魂';
+                musicIcon.innerText = '🎶';
+            } else {
+                audio.pause();
+                isPlaying = false;
+                musicStatus.innerText = '静寂';
+                musicIcon.innerText = '🎵';
+            }
+        });
+    </script>
+</body>
+</html>
