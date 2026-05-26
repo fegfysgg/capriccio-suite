@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择时间轴 · 追忆之路</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #1a1612 0%, #2a241e 100%);
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .container { max-width: 900px; width: 100%; text-align: center; }
+        h1 { color: #d4c5a8; font-size: 32px; font-weight: normal; letter-spacing: 8px; margin-bottom: 20px; }
+        .sub { color: #8a7a62; font-size: 14px; margin-bottom: 40px; }
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .timeline-card {
+            background: rgba(50, 42, 35, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid #6a5a48;
+            border-radius: 16px;
+            padding: 16px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            border-color: #c49a6c;
+            background: rgba(70, 58, 48, 0.8);
+        }
+        .date { font-size: 18px; color: #ecd9b4; font-weight: bold; }
+        .year { font-size: 12px; color: #a09070; margin-top: 4px; }
+        .back-btn { color: #8a7a62; text-decoration: none; font-size: 13px; padding: 8px 20px; border: 1px solid #5a4d3e; border-radius: 30px; display: inline-block; }
+        .back-btn:hover { background: rgba(90, 77, 62, 0.3); color: #d4c5a8; }
+        footer { margin-top: 40px; font-size: 11px; color: #5a4d3e; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 选择时间轴</h1>
+        <div class="sub">选择日期，开启追忆</div>
+        <div class="timeline-grid" id="timelineGrid"></div>
+        <div><a href="lang-select.html" class="back-btn">← 返回语言选择</a></div>
+    </div>
+    <footer>选择后将进入对应时期的网站</footer>
+
+    <script>
+        // 时间戳列表（按时间顺序排列）
+        const timestamps = [
+            { timestamp: "20040405202738", date: "2004年04月05日" },
+            { timestamp: "20040418003620", date: "2004年04月18日" },
+            { timestamp: "20040524132209", date: "2004年05月24日" },
+            { timestamp: "20040605124438", date: "2004年06月05日" },
+            { timestamp: "20040615210706", date: "2004年06月15日" },
+            { timestamp: "20040829053800", date: "2004年08月29日" },
+            { timestamp: "20040904130243", date: "2004年09月04日" },
+            { timestamp: "20040922225024", date: "2004年09月22日" },
+            { timestamp: "20041123155158", date: "2004年11月23日" },
+            { timestamp: "20050201123904", date: "2005年02月01日" },
+            { timestamp: "20050204174100", date: "2005年02月04日" },
+            { timestamp: "20050312164919", date: "2005年03月12日" },
+            { timestamp: "20050529003909", date: "2005年05月29日" },
+            { timestamp: "20050624075507", date: "2005年06月24日" },
+            { timestamp: "20051210082843", date: "2005年12月10日" },
+            { timestamp: "20060614232354", date: "2006年06月14日" },
+            { timestamp: "20060701212549", date: "2006年07月01日" },
+            { timestamp: "20080308134344", date: "2008年03月08日" },
+            { timestamp: "20080321235354", date: "2008年03月21日" },
+            { timestamp: "20081207110259", date: "2008年12月07日" },
+            { timestamp: "20081224165636", date: "2008年12月24日" },
+            { timestamp: "20090223082333", date: "2009年02月23日" },
+            { timestamp: "20100217162443", date: "2010年02月17日" },
+            { timestamp: "20100724233011", date: "2010年07月24日" }
+        ];
+
+        const timelineGrid = document.getElementById('timelineGrid');
+
+        timestamps.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'timeline-card';
+            card.innerHTML = `
+                <div class="date">${item.date}</div>
+                <div class="year">${item.timestamp.slice(0, 4)}年</div>
+            `;
+            card.addEventListener('click', () => {
+                // 中文版跳转到 zh 文件夹
+                const targetPath = `main_site/${item.timestamp}/zh/index.html`;
+                document.body.style.transition = 'opacity 0.5s';
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = targetPath;
+                }, 500);
+            });
+            timelineGrid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
