@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择语言 · 遗物之匣</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #1a1612 0%, #2a241e 100%);
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .container { max-width: 650px; width: 100%; text-align: center; }
+        h1 { color: #d4c5a8; font-size: 32px; font-weight: normal; letter-spacing: 8px; margin-bottom: 20px; }
+        .sub { color: #8a7a62; font-size: 14px; margin-bottom: 50px; }
+        .lang-cards { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-bottom: 40px; }
+        .lang-card {
+            background: rgba(50, 42, 35, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid #6a5a48;
+            border-radius: 24px;
+            padding: 35px 30px;
+            width: 220px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .lang-card:hover { transform: translateY(-8px); border-color: #c49a6c; background: rgba(70, 58, 48, 0.8); }
+        .lang-icon { font-size: 48px; margin-bottom: 15px; }
+        .lang-name { font-size: 28px; color: #ecd9b4; margin-bottom: 8px; }
+        .lang-desc { font-size: 11px; color: #a09070; }
+        .back-btn { color: #8a7a62; text-decoration: none; font-size: 13px; padding: 8px 20px; border: 1px solid #5a4d3e; border-radius: 30px; display: inline-block; }
+        .back-btn:hover { background: rgba(90, 77, 62, 0.3); color: #d4c5a8; }
+        footer { margin-top: 40px; font-size: 11px; color: #5a4d3e; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 遺物の匣</h1>
+        <div class="sub">Choose a language</div>
+        <div class="lang-cards">
+            <div class="lang-card" data-lang="ja">
+                <div class="lang-icon">🇯🇵</div>
+                <div class="lang-name">日本語</div>
+                <div class="lang-desc">オリジナル版</div>
+            </div>
+            <div class="lang-card" data-lang="zh">
+                <div class="lang-icon">🇨🇳</div>
+                <div class="lang-name">中文</div>
+                <div class="lang-desc">中文版</div>
+            </div>
+        </div>
+        <div><a href="index.html" class="back-btn">← 返回墓碑</a></div>
+    </div>
+    <footer>选择语言后，将直接进入遗物库</footer>
+
+    <script>
+        document.querySelectorAll('.lang-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                const targetPath = `archive/${lang}/index.html`;
+                document.body.style.transition = 'opacity 0.5s';
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = targetPath;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
