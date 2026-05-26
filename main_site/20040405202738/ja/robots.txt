@@ -1,0 +1,206 @@
+<html>
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=oZ57VlYl" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://hpad.www.infoseek.co.jp:80/FhpE?sv=FE&amp;pg=FhpE_404.html","20040404074457","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1081064697");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+
+<meta http-equiv="refresh" content="3;URL=https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Home?pg=Home.html&amp;svx=910103"><title>infoseek isweb</title>
+<!-- 漢字 -->
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+<style type="TEXT/CSS">
+<!--
+FONT.f12 {font-size: 12px; font-weight: normal}
+FONT.f9 {font-size: 9px; font-weight: normal}
+FONT.f10 {font-size: 10px; font-weight: normal}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" text="#333333" link="#3333CC">
+<!-- Start Header -->
+<!-- START Header_top --><a name="top"></a>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td rowspan="3" valign="TOP"><a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/" target="_top"><img src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/isj00/head/infoseek.gif" width="95" height="30" border="0" alt="infoseek - 検索エンジン・ポータルサイト -"></a></td>
+ <td rowspan="3" valign="TOP"><a href="https://web.archive.org/web/20040404074457/http://isweb.www.infoseek.co.jp/Icont?sv=IW&amp;pg=iw_top.html&amp;svx=101100" target="_top"><img src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/isj00/head/t_isweb.gif" width="88" height="30" border="0" alt="isweb"></a></td>
+<td rowspan="3"><a href="https://web.archive.org/web/20040404074457/http://isweb.www.infoseek.co.jp/Icont?sv=IW&amp;pg=iw_top.html&amp;svx=101100" target="_top"><img src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/isj00/head/sy_isweb.gif" width="48" height="48" border="0" alt="iswebICON"></a></td> <td rowspan="3" width="4">&nbsp;</td> <td align="RIGHT" nowrap><font size="-1">&nbsp;&nbsp;▲&nbsp;<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/" target="_top"><font color="#000000" style="decoration:none">トップ</font></a></font></td><td></td>
+</tr>
+<tr><td width="100%" height="1" bgcolor="#0033CC" colspan="2"><spacer type="BLOCK" height="1"></td></tr>
+<tr><td align="RIGHT" colspan="2" height="20"> </td></tr>
+</table>
+<!-- END Header_top -->
+<!-- End Header -->
+<!-- Start Ad -->
+<table width="100%" border="0" cellspacing="10">
+<tr>
+<td valign="MIDDLE" align="CENTER" nowrap>
+<!-- START BANNER -->
+<font color="#666666" class="f12">
+<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/redirect?sv=FE&amp;lk=&amp;tid=&amp;ak=labo-2002-1012-H1114&amp;rd=http://www.p-advg.com/?bid=97325" target="_top"><img border="0" width="468" height="60" src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/ads/labo1012.gif" alt=""></a><br></font>
+<!-- END BANNER -->
+</td>
+</tr>
+</table>
+<!-- End Ad -->
+<font class="f9"><br></font>
+<!--↓search-->
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+<tr>
+<td colspan="3" nowrap><font size="4" color="#A00000"><b>お探しのページは見つかりませんでした。(404 Not Found)</b></font></td>
+</tr>
+<!-- No Content : ISWEB-E-1003 -->
+</tr>
+</table>
+<!--↑search-->
+<font class="f9"><br></font>
+
+<table width="780" border="0" cellspacing="0" cellpadding="0">
+<tr valign="TOP">
+<td width="180">
+	<!-- ↓osusume -->
+	<table border="0" width="100%" cellpadding="3" cellspacing="0" bgcolor="#EFEFEF">
+	<tr bgcolor="#DCE1DC">
+	<td><font class="f12">おすすめコンテンツ</font></td>
+	</tr>
+	<tr><td><font class="f12" style="line-height:120%" color="#002CB7">
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Sspecial?pg=freshers.html&amp;svx=280504">新生活特集</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://car.www.infoseek.co.jp/CarNew?pg=car_newtop.html&amp;sv=KA&amp;svx=280504">新車</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.isize.com/carsensor/cgi-bin/EX/EXBUTOP.cgi?STID=EXIFL&amp;TRCD=TREX03&amp;ROUTEID=infoseek&amp;CMDCD=BUTOP&amp;svx=280504">中古車</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://car.www.infoseek.co.jp/CarRq?pg=rqlist.html&amp;sv=KA&amp;svx=280504">レースクイーン</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://house.www.infoseek.co.jp/House/top?sv=RF&amp;svx=280504">住まい・不動産</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://edu.www.infoseek.co.jp/Edu?pg=gs_top.html&amp;sv=JT&amp;svx=280504">資格・おケイコ</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://edu.www.infoseek.co.jp/EduSpecial?pg=mov_dea_top_if.html&amp;sv=JT&amp;svx=280504">映画で語学を学ぼう</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://career.www.infoseek.co.jp/JobRegular?pg=jr_index.html&amp;sv=SJ&amp;svx=280504">転職</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://career.www.infoseek.co.jp/JobArbeit?pg=ja_index.html&amp;sv=SJ&amp;svx=280504">バイト</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://career.www.infoseek.co.jp/JobTemp?pg=jt_index.html&amp;sv=SJ&amp;svx=280504">派遣</a><br>
+	</font></td>
+	</tr>
+	<tr>
+	<td><img src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/isj00/common/clear.gif" width="180" height="1"></td>
+	</tr>
+	
+	<tr bgcolor="#DCE1DC">
+	<td><font class="f12">おすすめリンク集</font></td>
+	</tr>
+	<tr><td><font class="f12" style="line-height:120%" color="#002CB7">
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/1">クルマ</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/3">キャリア</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/5">学び</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/7">マネー</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/2">住まい</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/12">医療･健康
+</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/8">トラベル</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/9">暮らし</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/11">ビジネス</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/13">コンピュータ</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/14">インターネット</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/4">女性</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/15">趣味・スポーツ</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/6">エンターテインメント</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/10">ショッピング</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/17">メディア･情報源
+</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/16">アート･カルチャー
+</a><br>
+	・<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/Topic/18">infoseekオススメ
+</a>
+	</font></td>
+	</tr>
+	</table>
+	<img src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/isj00/common/clear.gif" width="180" height="1">
+	<!-- osusume -->
+</td>
+<td width="10"><img src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/isj00/common/clear.gif" width="10" height="1"></td>
+<td width="100%">
+
+
+<!--AD-->
+
+
+<!--/AD-->
+</td>
+</tr>
+</table>
+
+
+<hr size="1" color="CCCCCC">
+<small><ul>
+<li>以下のような理由が考えられます。
+<ul>
+<li>ファイルが削除されています。
+<li>ファイル名が変更されています。
+<li>このページの管理者がページを閉じています。<br>
+</ul>
+<br>なお、isweb事務局は「なぜ見えないのか？」といった質問にはお答えできませんので、ご了承ください。
+</ul></small>
+<!-- Start Ad -->
+<table width="100%" border="0" cellspacing="10">
+<tr>
+<td valign="MIDDLE" align="CENTER" nowrap>
+<!-- START BANNER -->
+<font color="#666666" class="f12">
+<a href="https://web.archive.org/web/20040404074457/http://www.infoseek.co.jp/redirect?sv=FE&amp;lk=&amp;tid=&amp;ak=labo-2002-1012-H1114&amp;rd=http://www.p-advg.com/?bid=97325" target="_top"><img border="0" width="468" height="60" src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/ads/labo1012.gif" alt=""></a><br></font>
+<!-- END BANNER -->
+</td>
+</tr>
+</table>
+<!-- End Ad -->
+<br>
+<!-- Start Footer -->
+<!-- START Footer -->
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="4" bgcolor="#eeeeee">
+<tr>
+<td align="CENTER"><font size="2" class="f12" color="#999999">
+<a href="/web/20040404074457/http://hpad.www.infoseek.co.jp/ISJ?pg=isj_prof.html&amp;lk=noframes&amp;sf=1&amp;svx=199700"><font color="#555555">会社案内</font></a> |
+<a href="/web/20040404074457/http://hpad.www.infoseek.co.jp/ISJ?pg=isj_adi.html&amp;lk=noframes&amp;sf=1&amp;svx=199700"><font color="#555555">広告掲載について</font></a> |
+<a href="/web/20040404074457/http://hpad.www.infoseek.co.jp/Help?pg=help_addurl.html&amp;lk=noframes&amp;sf=1&amp;svx=199700"><font color="#555555">サイト登録</font></a> |
+<a href="/web/20040404074457/http://hpad.www.infoseek.co.jp/Linkkit?pg=lkt_top.html&amp;lk=noframes&amp;sf=1&amp;svx=199700"><font color="#555555">リンクキット</font></a> |
+<a href="/web/20040404074457/http://hpad.www.infoseek.co.jp/Notice?pg=legal.html&amp;lk=noframes&amp;sf=1&amp;svx=199700"><font color="#555555">免責事項</font></a> |
+<a href="/web/20040404074457/http://hpad.www.infoseek.co.jp/Help?pg=help.html&amp;lk=noframes&amp;sf=1&amp;svx=199700"><font color="#555555">お問い合わせ</font></a></font></td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr bgcolor="#990000"><td height="3"><img src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/isj00/common/im_clear.gif" width="1" height="3" border="0"></td></tr>
+<tr bgcolor="#CCCCCC"><td height="1"><img src="https://web.archive.org/web/20040404074457im_/http://www.infoseek.co.jp/images/isj00/common/im_clear.gif" width="1" height="1" border="0"></td></tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+<tr bgcolor="#FFFFFF">
+<td align="CENTER" nowrap><font size="1" class="f10">
+infoseek, およびinfoseekロゴは 楽天株式会社の商標です。<br>
+これら以外のマークは、それぞれ関係各社の商標および登録商標です。<br>
+Copyright (c) 1997-2003 <a href="https://web.archive.org/web/20040404074457/http://www.rakuten.co.jp/info/">Rakuten, Inc.</a> All Rights Reserved.</font></td>
+</tr>
+</table>
+<!-- END FOOTER -->
+<!-- End Footer -->
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 07:44:57 Apr 04, 2004 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:37:33 May 05, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.096
+  exclusion.robots: 0.094
+  exclusion.robots.policy: 0.067
+  esindex: 0.019
+  cdx.remote: 6.899
+  LoadShardBlock: 97.067 (3)
+  PetaboxLoader3.resolve: 47.842 (3)
+  PetaboxLoader3.datanode: 75.859 (4)
+  load_resource: 45.029
+-->
