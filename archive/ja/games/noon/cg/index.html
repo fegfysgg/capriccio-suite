@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームCG · NooN. · Capriccio Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0a0c;
+            background: radial-gradient(circle at center, #1a1a1f 0%, #050505 100%);
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            position: relative;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(15, 15, 18, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(150, 130, 100, 0.25);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 12px;
+            color: #c8b88a;
+        }
+
+        .back-btn:hover {
+            background: rgba(30, 28, 25, 0.85);
+            border-color: rgba(200, 170, 120, 0.5);
+            transform: scale(1.02);
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 80px 20px 60px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title-ja {
+            font-size: 28px;
+            color: #d4c5a8;
+            letter-spacing: 4px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .title-sub {
+            font-size: 14px;
+            color: #9a8a6a;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #5a4d3e;
+            margin: 20px auto;
+        }
+
+        /* 画廊网格 */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: rgba(30, 25, 20, 0.4);
+            border: 1px solid #5a4d3e;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: #c49a6c;
+            background: rgba(50, 42, 35, 0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: #1a1512;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .filename {
+            padding: 8px 10px;
+            font-size: 10px;
+            color: #9a8a6a;
+            text-align: center;
+            border-top: 1px solid #5a4d3e;
+            background: rgba(0,0,0,0.3);
+            word-break: break-all;
+        }
+
+        /* 模态框（完整图片弹窗） */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border: 2px solid #c49a6c;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #c8b88a;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #ecd9b4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0 20px;
+            font-size: 10px;
+            color: #4a4030;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-btn">← 戻る</a>
+
+    <div class="container">
+        <div class="title">
+            <div class="title-ja">NooN. ゲームCG</div>
+            <div class="title-sub">Game CG Gallery</div>
+            <div class="divider"></div>
+        </div>
+
+        <div class="gallery" id="gallery"></div>
+        <footer>Capriccio Suite · NooN. CG Collection</footer>
+    </div>
+
+    <!-- 模态框 -->
+    <div id="modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="">
+    </div>
+
+    <script>
+        // CG文件列表（按你给的顺序）
+        const cgFiles = [
+            "cgimage001.png",
+            "cgimage002-1.png",
+            "cgimage002-2.png",
+            "cgimage002-3.png",
+            "cgimage002-4.png",
+            "cgimage003-1.png",
+            "cgimage003-2.png",
+            "cgimage004-1.png",
+            "cgimage004-2.png",
+            "cgimage007-1.png",
+            "cgimage007-2.png",
+            "cgimage007-3.png",
+            "cgimage008.png",
+            "cgimage009.png",
+            "cgimage010-1.png",
+            "cgimage010-2.png",
+            "cgimage012-1.png",
+            "cgimage012-2.png",
+            "cgimage013.png",
+            "cgimage014.png",
+            "cgimage015.png",
+            "cgimage016.png",
+            "cgimage017.png",
+            "cgimage018-1.png",
+            "cgimage018-2.png",
+            "cgimage021-1.png",
+            "cgimage021-2.png",
+            "cgimage021-3.png",
+            "cgimage022.png",
+            "cgimage031.png",
+            "cgimage033.png",
+            "cgimage036.png",
+            "cgimage037.png",
+            "cgimage038.png",
+            "cgimage039.png",
+            "cgimage041.png",
+            "cgimage042.png",
+            "cgimage043.png",
+            "cgimage044.png",
+            "cgimage045.png",
+            "cgimage046.png",
+            "cgimage047.png",
+            "cgimage048.png",
+            "cgimage050.png"
+        ];
+
+        const gallery = document.getElementById('gallery');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        const modalClose = document.querySelector('.modal-close');
+
+        // 构建画廊
+        cgFiles.forEach(file => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            
+            // 缩略图路径（images文件夹下）
+            const thumbPath = `../images/${file}`;
+            // 完整图片路径（同样位置）
+            const fullPath = `../images/${file}`;
+            
+            item.innerHTML = `
+                <div class="thumbnail">
+                    <img src="${thumbPath}" alt="${file}" loading="lazy">
+                </div>
+                <div class="filename">${file.replace('.png', '')}</div>
+            `;
+            
+            // 点击显示完整图片
+            item.addEventListener('click', () => {
+                modalImage.src = fullPath;
+                modal.classList.add('active');
+            });
+            
+            gallery.appendChild(item);
+        });
+
+        // 关闭模态框
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // ESC键关闭
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
