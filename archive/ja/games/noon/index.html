@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NooN. · Capriccio Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0a0c;
+            background: radial-gradient(circle at center, #1a1a1f 0%, #050505 100%);
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(15, 15, 18, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(150, 130, 100, 0.25);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 12px;
+            color: #c8b88a;
+        }
+
+        .back-btn:hover {
+            background: rgba(30, 28, 25, 0.85);
+            border-color: rgba(200, 170, 120, 0.5);
+            transform: scale(1.02);
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            padding: 40px 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .game-title {
+            font-size: 24px;
+            color: #ecd9b4;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .game-sub {
+            font-size: 12px;
+            color: #9a8a6a;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #5a4d3e;
+            margin: 20px auto;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-btn {
+            background: rgba(30, 25, 20, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid #5a4d3e;
+            border-radius: 20px;
+            padding: 20px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .menu-btn:hover {
+            transform: translateY(-5px);
+            border-color: #c49a6c;
+            background: rgba(50, 42, 35, 0.8);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .menu-title {
+            font-size: 20px;
+            color: #ecd9b4;
+            letter-spacing: 2px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            color: #4a4030;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-btn">← 戻る</a>
+
+    <div class="container">
+        <div class="title">
+            <div class="game-title">NooN. ~いつもより少しだけ長かったあの夏の一日~</div>
+            <div class="game-sub">ヌーン</div>
+            <div class="divider"></div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-btn" id="detailBtn">
+                <div class="menu-title">詳細情報</div>
+            </div>
+            <div class="menu-btn" id="cgBtn">
+                <div class="menu-title">ゲームCG</div>
+            </div>
+            <div class="menu-btn" id="musicBtn">
+                <div class="menu-title">ゲーム中の音楽</div>
+            </div>
+            <div class="menu-btn" id="opEdBtn">
+                <div class="menu-title">OP & ED</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>Capriccio Suite · NooN.</footer>
+
+    <script>
+        document.getElementById('detailBtn').addEventListener('click', () => {
+            window.location.href = 'https://vndb.org/v3634';  // 或外部链接
+        });
+        document.getElementById('cgBtn').addEventListener('click', () => {
+            window.location.href = 'cg/';
+        });
+        document.getElementById('musicBtn').addEventListener('click', () => {
+            window.location.href = 'music/';
+        });
+        document.getElementById('opEdBtn').addEventListener('click', () => {
+            window.location.href = 'op_ed/';
+        });
+    </script>
+</body>
+</html>
