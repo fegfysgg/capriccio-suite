@@ -77,7 +77,6 @@
             margin: 20px auto;
         }
 
-        /* 画廊网格 */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -131,7 +130,6 @@
             word-break: break-all;
         }
 
-        /* 模态框（完整图片弹窗） */
         .modal {
             display: none;
             position: fixed;
@@ -196,14 +194,13 @@
         <footer>Capriccio Suite · NooN. CG Collection</footer>
     </div>
 
-    <!-- 模态框 -->
     <div id="modal" class="modal">
         <span class="modal-close">&times;</span>
         <img id="modalImage" src="" alt="">
     </div>
 
     <script>
-        // CG文件列表（按你给的顺序）
+        // CG文件列表
         const cgFiles = [
             "cgimage001.png",
             "cgimage002-1.png",
@@ -256,33 +253,30 @@
         const modalImage = document.getElementById('modalImage');
         const modalClose = document.querySelector('.modal-close');
 
-        // 构建画廊
+        // 图片路径：../images/ 因为 cg/index.html → noon/images/
+        const imageBasePath = '../images/';
+
         cgFiles.forEach(file => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
             
-            // 缩略图路径（images文件夹下）
-            const thumbPath = `../images/${file}`;
-            // 完整图片路径（同样位置）
-            const fullPath = `../images/${file}`;
+            const imagePath = imageBasePath + file;
             
             item.innerHTML = `
                 <div class="thumbnail">
-                    <img src="${thumbPath}" alt="${file}" loading="lazy">
+                    <img src="${imagePath}" alt="${file}" loading="lazy">
                 </div>
                 <div class="filename">${file.replace('.png', '')}</div>
             `;
             
-            // 点击显示完整图片
             item.addEventListener('click', () => {
-                modalImage.src = fullPath;
+                modalImage.src = imagePath;
                 modal.classList.add('active');
             });
             
             gallery.appendChild(item);
         });
 
-        // 关闭模态框
         modalClose.addEventListener('click', () => {
             modal.classList.remove('active');
         });
@@ -293,7 +287,6 @@
             }
         });
 
-        // ESC键关闭
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 modal.classList.remove('active');
