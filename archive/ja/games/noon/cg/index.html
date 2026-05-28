@@ -253,8 +253,8 @@
         const modalImage = document.getElementById('modalImage');
         const modalClose = document.querySelector('.modal-close');
 
-        // 图片路径：../images/ 因为 cg/index.html → noon/images/
-        const imageBasePath = '../images/';
+        // 绝对路径：图片放在 cg/images/ 文件夹下
+        const imageBasePath = '/archive/ja/games/noon/cg/images/';
 
         cgFiles.forEach(file => {
             const item = document.createElement('div');
@@ -264,7 +264,7 @@
             
             item.innerHTML = `
                 <div class="thumbnail">
-                    <img src="${imagePath}" alt="${file}" loading="lazy">
+                    <img src="${imagePath}" alt="${file}" loading="lazy" onerror="this.src='/archive/ja/games/noon/cg/images/placeholder.png'">
                 </div>
                 <div class="filename">${file.replace('.png', '')}</div>
             `;
