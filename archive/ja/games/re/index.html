@@ -118,6 +118,89 @@
             color: #4a4030;
             letter-spacing: 1px;
         }
+
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: rgba(30, 25, 20, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid #c49a6c;
+            border-radius: 24px;
+            padding: 30px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .modal-title-ja {
+            font-size: 22px;
+            color: #ecd9b4;
+            margin-bottom: 15px;
+        }
+
+        .modal-title-zh {
+            font-size: 12px;
+            color: #9a8a6a;
+            margin-bottom: 20px;
+        }
+
+        .modal-body {
+            color: #c8bc9e;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .contact-info {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .contact-item {
+            font-size: 13px;
+            color: #ecd9b4;
+            margin-bottom: 8px;
+        }
+
+        .contact-label {
+            color: #9a8a6a;
+            font-size: 11px;
+        }
+
+        .modal-btn {
+            background: rgba(200, 170, 120, 0.3);
+            border: 1px solid #c49a6c;
+            border-radius: 30px;
+            padding: 10px 24px;
+            font-size: 14px;
+            color: #ecd9b4;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-btn:hover {
+            background: rgba(200, 170, 120, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -137,17 +220,98 @@
             <div class="menu-btn" id="edBtn">
                 <div class="menu-title">ゲームED</div>
             </div>
+            <div class="menu-btn" id="scenarioBtn">
+                <div class="menu-title">部分ストーリー動画</div>
+            </div>
+            <div class="menu-btn" id="playBtn">
+                <div class="menu-title">ゲームを入手</div>
+            </div>
         </div>
     </div>
 
     <footer>Capriccio Suite · Re:</footer>
 
+    <!-- 剧情视频弹窗 -->
+    <div id="scenarioModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-title-ja">ストーリー動画について</div>
+            <div class="modal-title-zh">关于剧情视频</div>
+            <div class="modal-body">
+                この動画で表示されるストーリーは中国語です。<br>
+                続行する場合は、中国語の基礎知識があるものと見なされます。<br>
+                <span style="font-size:11px; color:#7a6a52;">此视频展示的剧情为中文，继续点击即视为具备中文基础。</span>
+            </div>
+            <button class="modal-btn" id="scenarioConfirmBtn">了解しました / 我已知晓</button>
+        </div>
+    </div>
+
+    <!-- 无资源弹窗 -->
+    <div id="noResourceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-title-ja">リソースなし</div>
+            <div class="modal-title-zh">暂无资源</div>
+            <div class="modal-body">
+                このゲームのリソースは現在ありません。<br>
+                もしリソースをお持ちでしたら、ご連絡ください。<br>
+                ゲームリソースの提供にご協力ください。
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">📺 Bilibili ID: <span class="contact-label">1873449260</span></div>
+                <div class="contact-item">📧 メール: <span class="contact-label">2639048034@qq.com</span></div>
+                <div class="contact-item" style="margin-top:10px; font-size:11px; color:#7a6a52;">※ 連絡時は「ゲームリソース提供」と明記してください</div>
+            </div>
+            <div class="modal-body" style="font-size:11px; color:#7a6a52;">
+                如果你有此游戏的资源，请联系我补充。
+            </div>
+            <button class="modal-btn" id="closeModalBtn">了解しました / 我已知晓</button>
+        </div>
+    </div>
+
     <script>
         document.getElementById('detailBtn').addEventListener('click', () => {
-            window.location.href = 'https://vndb.org/v61903';  // 或外部链接
+            window.location.href = 'https://vndb.org/v61903';
         });
         document.getElementById('edBtn').addEventListener('click', () => {
             window.location.href = 'ed/';
+        });
+
+        // 剧情视频按钮
+        const scenarioModal = document.getElementById('scenarioModal');
+        const scenarioBtn = document.getElementById('scenarioBtn');
+        const scenarioConfirmBtn = document.getElementById('scenarioConfirmBtn');
+
+        scenarioBtn.addEventListener('click', () => {
+            scenarioModal.classList.add('active');
+        });
+
+        scenarioConfirmBtn.addEventListener('click', () => {
+            scenarioModal.classList.remove('active');
+            window.location.href = 'scenario/';
+        });
+
+        // 无资源弹窗
+        const noResourceModal = document.getElementById('noResourceModal');
+        const playBtn = document.getElementById('playBtn');
+
+        playBtn.addEventListener('click', () => {
+            noResourceModal.classList.add('active');
+        });
+
+        document.getElementById('closeModalBtn').addEventListener('click', () => {
+            noResourceModal.classList.remove('active');
+        });
+
+        // 点击背景关闭
+        scenarioModal.addEventListener('click', (e) => {
+            if (e.target === scenarioModal) {
+                scenarioModal.classList.remove('active');
+            }
+        });
+
+        noResourceModal.addEventListener('click', (e) => {
+            if (e.target === noResourceModal) {
+                noResourceModal.classList.remove('active');
+            }
         });
     </script>
 </body>
