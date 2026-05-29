@@ -1,0 +1,296 @@
+*{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  scrollbar-arrow-color:#C0C0C0;
+  scrollbar-3dlight-color:#f0f0f7;
+  scrollbar-base-color:#000000;
+  scrollbar-shadow-color:#000000;
+  scrollbar-face-color:#000000;
+  scrollbar-highlight-color:#000000;
+  scrollbar-darkshadow-color:#f0f0f7;
+  scrollbar-track-color:#f0f0f7;
+  margin:0px;
+  padding:0px;
+}
+BODY{
+  font-family:Verdana;
+  font-size:85%;
+  background:#000000;
+}
+
+/* ページ全体 */
+hr{
+  border-style: dotted;
+}
+h1{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  color:#595857;
+  font-size:12px;
+  text-align:right;
+}
+h2{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:30px;
+  color:#c46262;
+  border-top: 2px dotted #f0f0f7;
+  padding:10px 0px 30px 0px;
+}
+h3{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:15px;
+  color:#f0f0f7;
+  border-left: 6px solid #595857;
+  padding:2px 2px;
+}
+h4{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  font-style:oblique;
+  font-size:13px;
+  color:#c46262;
+}
+a{
+  text-decoration:none;
+}
+a:link{
+  color:#c46262;
+}
+a:visited{
+  color:#595857; 
+}
+a:hover{
+  color:#c22c2c;
+  text-decoration:none;
+}
+em{
+  font-weight:bold;
+  color:#c22c2c;
+}
+strong{
+  font-weight:bold;
+  font-size:13px;
+}
+small{
+  font-size:9px;
+}
+img {
+  border: none;
+}
+a img {
+  border: 2px solid #c46262;
+}
+
+/* トップページ */
+#title{
+  height:580px;
+  background:#595857 url(image/top.jpg) no-repeat;
+  padding:10px 10px 0px 300px;
+  text-align:right;
+}
+#title H1{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+    color:#000000;
+  padding:0px 10px 0px 0px;
+  font-size:16px;
+  line-height:1em;
+}
+#title H2{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  padding:100px 10px 5px 0px;
+  font-size:12px;
+  color:#c46262;
+  line-height:1em;
+  border-top:none;
+}
+#title em{
+  font-weight:bold;
+  color: #f0f0f7;;
+}
+#lud{
+  padding:5px 10px 0px 0px;
+  font-weight:bold;
+  font-size: 10px;
+}
+#text{
+  padding:5px 10px 0px 0px;
+  font-size: 9px;
+}
+
+/* メニュー */
+#menu{
+  width:100%;
+  text-align:right;
+  line-height:50px;
+}
+#menu LI{
+  display:inline;
+  list-style:none;
+  font-family:"Century Gothic";
+  padding:10px 10px 0px 0px;
+  font-weight:bold;
+  font-size:39px;
+}
+#menu2 LI{
+  display:inline;
+  list-style:none;
+  font-family:"Century Gothic";
+  padding:0px 5px 0px 0px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* 個別ページ */
+#page_about{
+  background:#595857 url(image/about.jpg) no-repeat 0px 0px;
+  padding:0px 0px 0px 210px;
+}
+#page_gallery{
+  background:#595857 url(image/gallery.jpg) no-repeat 0px 0px;
+  padding:0px 0px 0px 210px;
+}
+#page_circle{
+  background:#595857 url(image/circle.jpg) no-repeat 0px 0px;
+  padding:0px 0px 0px 210px;
+}
+#page_diary{
+  background:#595857 url(image/diary.jpg) no-repeat 0px 0px;
+  padding:0px 0px 0px 210px;
+}
+#page_link{
+  background:#595857 url(image/link.jpg) no-repeat 0px 0px;
+  padding:0px 0px 0px 210px;
+}
+#note{
+  background:#000000;
+  color:#f0f0f7;
+  padding:30px;
+  line-height:1.5em;
+  border:3px double #595857;
+  border-right:none;
+  font-size:12px;
+}
+
+/* gallery */
+.gif {
+  background: #fff;
+}
+.box {
+  background:#fff no-repeat 0px 0px;
+  color:#666;
+}
+.highslide {
+  cursor: url(../www.tarupito.net/error/404.html>highslide/graphics/zoomin.cur), pointer;
+}
+.highslide-loading {
+  display: block;
+  color: black;
+  font-size: 8pt;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 2px;
+  border: 1px solid black;
+  background-color: white;
+  padding-left: 22px;
+  background-image: url(../www.tarupito.net/error/404.html>highslide/graphics/loader.white.gif);
+  background-repeat: no-repeat;
+  background-position: 3px 1px;
+}
+a.highslide-full-expand {
+  background: url(../www.tarupito.net/error/404.html>highslide/graphics/fullexpand.gif) no-repeat;
+  display: block;
+  margin: 0 10px 10px 0;
+  width: 34px;
+  height: 34px;
+}
+#note2{
+  background:#fff;
+  color:#333;
+  padding:30px;
+  line-height:1.5em;
+  border:3px double #595857;
+  border-right:none;
+  font-size:12px;
+}
+#note2 h2{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:30px;
+  color:#c46262;
+  border-top: 2px dotted #333;
+  padding:10px 0px 30px 0px;
+}
+#note2 h3{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:15px;
+  color:#000;
+  border-left: 6px solid #595857;
+  padding:2px 2px;
+}
+.text{
+  background:#fff; filter:Alpha(opacity=90); opacity:.90;
+}
+.yukibana{
+  background: url(gallery/yukibana.jpg) no-repeat bottom right;
+}
+
+/* エラーページ */
+#error{
+  height:580px;
+  background:#595857 url() no-repeat;
+  padding:50px 10px 10px 10px;
+  text-align:center;
+}
+#error H1{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  color:#000000;
+  padding:10px 0px 0px 0px;
+  font-size:12px;
+  line-height:1em;
+  text-align:center;
+}
+#error H2{
+  font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  padding:30px 0px 0px 0px;
+  font-size:18px;
+  color:#c46262;
+  line-height:1em;
+  border-top:none;
+}
+#error em{
+  font-weight:bold;
+  color: #f0f0f7;;
+}
+#error a:link{
+  color:#c46262;
+}
+#error a:visited{
+  color:#c46262;
+}
+#error a:hover{
+  color:#c22c2c;
+  text-decoration:none;
+}
+#ertext{
+  font-size: 12px;
+  padding:20px 0px 20px 0px;
+}
+#ertext2{
+  font-size: 13px;
+  font-weight:bold;
+  padding:20px 0px 160px 0px;
+}
+#ertext3{
+  padding:5px 0px 0px 0px;
+  font-size: 9px;
+}
