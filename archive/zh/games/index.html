@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普尔特 -协奏曲- · Capriccio Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0a0c;
+            background: radial-gradient(circle at center, #1a1a1f 0%, #050505 100%);
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(15, 15, 18, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(150, 130, 100, 0.25);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 12px;
+            color: #c8b88a;
+        }
+
+        .back-btn:hover {
+            background: rgba(30, 28, 25, 0.85);
+            border-color: rgba(200, 170, 120, 0.5);
+            transform: scale(1.02);
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            padding: 40px 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .game-title-zh {
+            font-size: 28px;
+            color: #ecd9b4;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .game-title-ja {
+            font-size: 14px;
+            color: #9a8a6a;
+            margin-bottom: 8px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #5a4d3e;
+            margin: 20px auto;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-btn {
+            background: rgba(30, 25, 20, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid #5a4d3e;
+            border-radius: 20px;
+            padding: 20px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .menu-btn:hover {
+            transform: translateY(-5px);
+            border-color: #c49a6c;
+            background: rgba(50, 42, 35, 0.8);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .menu-title-zh {
+            font-size: 20px;
+            color: #ecd9b4;
+            letter-spacing: 2px;
+        }
+
+        .menu-title-ja {
+            font-size: 11px;
+            color: #9a8a6a;
+            margin-top: 4px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            color: #4a4030;
+            letter-spacing: 1px;
+        }
+
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: rgba(30, 25, 20, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid #c49a6c;
+            border-radius: 24px;
+            padding: 30px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .modal-title-zh {
+            font-size: 22px;
+            color: #ecd9b4;
+            margin-bottom: 15px;
+        }
+
+        .modal-title-ja {
+            font-size: 12px;
+            color: #9a8a6a;
+            margin-bottom: 20px;
+        }
+
+        .modal-body {
+            color: #c8bc9e;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .contact-info {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .contact-item {
+            font-size: 13px;
+            color: #ecd9b4;
+            margin-bottom: 8px;
+        }
+
+        .contact-label {
+            color: #9a8a6a;
+            font-size: 11px;
+        }
+
+        .modal-btn {
+            background: rgba(200, 170, 120, 0.3);
+            border: 1px solid #c49a6c;
+            border-radius: 30px;
+            padding: 10px 24px;
+            font-size: 14px;
+            color: #ecd9b4;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-btn:hover {
+            background: rgba(200, 170, 120, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-btn">← 返回</a>
+
+    <div class="container">
+        <div class="title">
+            <div class="game-title-zh">普尔特 -协奏曲-</div>
+            <div class="game-title-ja">pult -concerto-</div>
+            <div class="divider"></div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-btn" id="detailBtn">
+                <div class="menu-title-zh">详细信息</div>
+                <div class="menu-title-ja">詳細情報</div>
+            </div>
+            <div class="menu-btn" id="playBtn">
+                <div class="menu-title-zh">获取游戏</div>
+                <div class="menu-title-ja">ゲームを入手</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>Capriccio Suite · 普尔特 -协奏曲-</footer>
+
+    <!-- 弹窗 -->
+    <div id="noResourceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-title-zh">暂无资源</div>
+            <div class="modal-title-ja">リソースなし</div>
+            <div class="modal-body">
+                此游戏目前没有资源。<br>
+                如果您有资源，请联系我补充。<br>
+                感谢您协助提供游戏资源。
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">📺 Bilibili ID: <span class="contact-label">1873449260</span></div>
+                <div class="contact-item">📧 邮箱: <span class="contact-label">2639048034@qq.com</span></div>
+                <div class="contact-item" style="margin-top:10px; font-size:11px; color:#7a6a52;">※ 联系时请注明「游戏资源提供」</div>
+            </div>
+            <div class="modal-body" style="font-size:11px; color:#7a6a52;">
+                このゲームのリソースは現在ありません。もしリソースをお持ちでしたら、ご連絡ください。
+            </div>
+            <button class="modal-btn" id="closeModalBtn">我已知晓 / 了解しました</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('detailBtn').addEventListener('click', () => {
+            window.location.href = 'https://vndb.org/v40947';
+        });
+
+        const modal = document.getElementById('noResourceModal');
+        const playBtn = document.getElementById('playBtn');
+
+        playBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        document.getElementById('closeModalBtn').addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
