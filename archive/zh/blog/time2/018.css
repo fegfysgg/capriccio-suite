@@ -1,0 +1,85 @@
+*{
+  box-sizing : border-box;
+  -moz-box-sizing : border-box;
+}
+body{
+  font-family : Verdana;
+  font-size : x-small;
+  background:#595857
+}
+A{
+  color : #000000;
+}
+A:HOVER{
+  color : #d20000;
+  text-decoration : underline;
+}
+#showTIME{
+  position : absolute;
+  top : 20px;
+  left : 0px;
+  color : #f0f0f7;
+  font-family : "Century Gothic";
+  font-size : 100px;
+  z-index : 2;
+}
+h1{
+  margin : 0px;
+}
+#title1{
+  position : absolute;
+  top : 10px;
+  left : 15px;
+  font-family : "Century Gothic";
+  font-size : 60px;
+  z-index : 3;
+}
+#title2{
+  position : absolute;
+  top : 60px;
+  left : 15px;
+  font-family : "Century Gothic";
+  font-size : 60px;
+  z-index : 3;
+}
+#menu{
+  position : absolute;
+  top : 20px;
+  left : 420px;
+  font-family : "Century Gothic";
+  font-size : 20px;
+  z-index : 3;
+  list-style : none;
+}
+#title3{
+  position : absolute;
+  top : 0px;
+  left : 4px;
+  font-family : "Century Gothic";
+  font-weight:bold;
+  font-size : 15px;
+  color:#c46262;
+  z-index : 3;
+}
+#ghost1{
+  position : absolute;
+  top : 20px;
+  left : 305px;
+  z-index : 1;
+  list-style : none;
+}
+
+#ghost2{
+  position : absolute;
+  top : 50px;
+  left : 275px;
+  z-index : 1;
+  list-style : none;
+}
+#heart{
+  position : absolute;
+  top : 45px;
+  left : 262px;
+  z-index : 1;
+  list-style : none;
+}
