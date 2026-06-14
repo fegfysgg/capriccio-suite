@@ -81,7 +81,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
         }
 
         .video-card {
@@ -100,7 +100,7 @@
         }
 
         .video-label-zh {
-            font-size: 24px;
+            font-size: 20px;
             color: #ecd9b4;
             letter-spacing: 2px;
             margin-bottom: 5px;
@@ -249,23 +249,45 @@
         </div>
 
         <div class="video-section">
+            <!-- 视频1 -->
             <div class="video-card">
-                <div class="video-label-zh">剧情影像</div>
-                <div class="video-label-ja">シナリオ映像</div>
+                <div class="video-label-zh">剧情影像 其一</div>
+                <div class="video-label-ja">シナリオ映像 其ノ一</div>
                 <div class="video-container">
-                    <video id="scenarioVideo" src="/archive/zh/games/re/scenario/re_scenario.webm" preload="metadata"></video>
+                    <video id="scenarioVideo1" src="/archive/zh/games/re/scenario/re_scenario01.webm" preload="metadata"></video>
                 </div>
                 <div class="video-controls">
-                    <button class="ctrl-btn" id="playBtn">▶ 播放</button>
-                    <button class="ctrl-btn" id="pauseBtn">⏸ 暂停</button>
-                    <button class="ctrl-btn" id="stopBtn">⏹ 停止</button>
-                    <button class="ctrl-btn" id="zoomBtn">🔍 放大</button>
+                    <button class="ctrl-btn" id="playBtn1">▶ 播放</button>
+                    <button class="ctrl-btn" id="pauseBtn1">⏸ 暂停</button>
+                    <button class="ctrl-btn" id="stopBtn1">⏹ 停止</button>
+                    <button class="ctrl-btn" id="zoomBtn1">🔍 放大</button>
                     <div class="progress-container">
-                        <div class="progress-bar" id="progressBar">
-                            <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-bar" id="progressBar1">
+                            <div class="progress-fill" id="progressFill1"></div>
                         </div>
                     </div>
-                    <div class="time-info" id="timeInfo">0:00 / 0:00</div>
+                    <div class="time-info" id="timeInfo1">0:00 / 0:00</div>
+                </div>
+            </div>
+
+            <!-- 视频2 -->
+            <div class="video-card">
+                <div class="video-label-zh">剧情影像 其二</div>
+                <div class="video-label-ja">シナリオ映像 其ノ二</div>
+                <div class="video-container">
+                    <video id="scenarioVideo2" src="/archive/zh/games/re/scenario/re_scenario02.webm" preload="metadata"></video>
+                </div>
+                <div class="video-controls">
+                    <button class="ctrl-btn" id="playBtn2">▶ 播放</button>
+                    <button class="ctrl-btn" id="pauseBtn2">⏸ 暂停</button>
+                    <button class="ctrl-btn" id="stopBtn2">⏹ 停止</button>
+                    <button class="ctrl-btn" id="zoomBtn2">🔍 放大</button>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar2">
+                            <div class="progress-fill" id="progressFill2"></div>
+                        </div>
+                    </div>
+                    <div class="time-info" id="timeInfo2">0:00 / 0:00</div>
                 </div>
             </div>
         </div>
@@ -279,15 +301,27 @@
     </div>
 
     <script>
-        const video = document.getElementById('scenarioVideo');
-        const playBtn = document.getElementById('playBtn');
-        const pauseBtn = document.getElementById('pauseBtn');
-        const stopBtn = document.getElementById('stopBtn');
-        const zoomBtn = document.getElementById('zoomBtn');
-        const progressBar = document.getElementById('progressBar');
-        const progressFill = document.getElementById('progressFill');
-        const timeInfo = document.getElementById('timeInfo');
+        // 视频1元素
+        const video1 = document.getElementById('scenarioVideo1');
+        const playBtn1 = document.getElementById('playBtn1');
+        const pauseBtn1 = document.getElementById('pauseBtn1');
+        const stopBtn1 = document.getElementById('stopBtn1');
+        const zoomBtn1 = document.getElementById('zoomBtn1');
+        const progressBar1 = document.getElementById('progressBar1');
+        const progressFill1 = document.getElementById('progressFill1');
+        const timeInfo1 = document.getElementById('timeInfo1');
 
+        // 视频2元素
+        const video2 = document.getElementById('scenarioVideo2');
+        const playBtn2 = document.getElementById('playBtn2');
+        const pauseBtn2 = document.getElementById('pauseBtn2');
+        const stopBtn2 = document.getElementById('stopBtn2');
+        const zoomBtn2 = document.getElementById('zoomBtn2');
+        const progressBar2 = document.getElementById('progressBar2');
+        const progressFill2 = document.getElementById('progressFill2');
+        const timeInfo2 = document.getElementById('timeInfo2');
+
+        // 模态框
         const modal = document.getElementById('modal');
         const modalVideo = document.getElementById('modalVideo');
         const modalClose = document.querySelector('.modal-close');
@@ -300,53 +334,83 @@
             return `${mins}:${secs.toString().padStart(2, '0')}`;
         }
 
-        // 更新进度条和时间
-        function updateProgress() {
-            if (video.duration) {
-                const percent = (video.currentTime / video.duration) * 100;
-                progressFill.style.width = percent + '%';
-                timeInfo.innerText = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+        // 更新进度条（视频1）
+        function updateProgress1() {
+            if (video1.duration) {
+                const percent = (video1.currentTime / video1.duration) * 100;
+                progressFill1.style.width = percent + '%';
+                timeInfo1.innerText = `${formatTime(video1.currentTime)} / ${formatTime(video1.duration)}`;
             } else {
-                progressFill.style.width = '0%';
-                timeInfo.innerText = '0:00 / 0:00';
+                progressFill1.style.width = '0%';
+                timeInfo1.innerText = '0:00 / 0:00';
             }
         }
 
-        video.addEventListener('timeupdate', updateProgress);
-        video.addEventListener('loadedmetadata', updateProgress);
+        // 更新进度条（视频2）
+        function updateProgress2() {
+            if (video2.duration) {
+                const percent = (video2.currentTime / video2.duration) * 100;
+                progressFill2.style.width = percent + '%';
+                timeInfo2.innerText = `${formatTime(video2.currentTime)} / ${formatTime(video2.duration)}`;
+            } else {
+                progressFill2.style.width = '0%';
+                timeInfo2.innerText = '0:00 / 0:00';
+            }
+        }
 
-        // 播放
-        playBtn.addEventListener('click', () => {
-            video.play();
+        // 视频1事件监听
+        video1.addEventListener('timeupdate', updateProgress1);
+        video1.addEventListener('loadedmetadata', updateProgress1);
+        
+        playBtn1.addEventListener('click', () => video1.play());
+        pauseBtn1.addEventListener('click', () => video1.pause());
+        stopBtn1.addEventListener('click', () => {
+            video1.pause();
+            video1.currentTime = 0;
+            updateProgress1();
         });
-
-        // 暂停
-        pauseBtn.addEventListener('click', () => {
-            video.pause();
-        });
-
-        // 停止
-        stopBtn.addEventListener('click', () => {
-            video.pause();
-            video.currentTime = 0;
-            updateProgress();
-        });
-
-        // 进度条点击跳转
-        progressBar.addEventListener('click', (e) => {
-            const rect = progressBar.getBoundingClientRect();
+        
+        progressBar1.addEventListener('click', (e) => {
+            const rect = progressBar1.getBoundingClientRect();
             const percent = (e.clientX - rect.left) / rect.width;
-            video.currentTime = percent * video.duration;
-            updateProgress();
+            video1.currentTime = percent * video1.duration;
+            updateProgress1();
         });
 
-        // 放大视频
-        zoomBtn.addEventListener('click', () => {
+        // 视频2事件监听
+        video2.addEventListener('timeupdate', updateProgress2);
+        video2.addEventListener('loadedmetadata', updateProgress2);
+        
+        playBtn2.addEventListener('click', () => video2.play());
+        pauseBtn2.addEventListener('click', () => video2.pause());
+        stopBtn2.addEventListener('click', () => {
+            video2.pause();
+            video2.currentTime = 0;
+            updateProgress2();
+        });
+        
+        progressBar2.addEventListener('click', (e) => {
+            const rect = progressBar2.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            video2.currentTime = percent * video2.duration;
+            updateProgress2();
+        });
+
+        // 放大视频功能
+        function openZoom(videoSrc) {
             modalVideo.pause();
-            modalVideo.src = '/archive/zh/games/re/scenario/re_scenario.webm';
+            modalVideo.src = videoSrc;
             modalVideo.load();
             modal.classList.add('active');
             modalVideo.play();
+        }
+
+        zoomBtn1.addEventListener('click', () => {
+            openZoom('/archive/zh/games/re/scenario/re_scenario01.webm');
+        });
+
+        zoomBtn2.addEventListener('click', () => {
+            openZoom('/archive/zh/games/re/scenario/re_scenario02.webm');
         });
 
         // 关闭模态框
